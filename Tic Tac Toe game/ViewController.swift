@@ -59,6 +59,20 @@ class ViewController: UIViewController {
         
         
     }
+    
+    func playerPlayed() {
+        if playerTurn == 1 {
+            playerTurn = 2
+            turnLabel.text = "It is Player's \(playerTurn) turn!"
+        } else if playerTurn == 2 {
+            playerTurn = 1
+            turnLabel.text = "It is Player's \(playerTurn) turn!"
+        }
+    }
+    
+    @IBAction func ticTacToebtn(_ sender: Any) {
+        
+    }
 
 }
 
