@@ -46,7 +46,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-4P-wzA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-4P-wzA">
                                 <rect key="frame" x="29" y="232" width="90" height="90"/>
                                 <color key="backgroundColor" red="0.44314685880829019" green="0.44314685880829019" blue="0.44314685880829019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
