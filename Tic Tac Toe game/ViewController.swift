@@ -42,17 +42,17 @@ class ViewController: UIViewController {
 
     @IBAction func resetButton(_ sender: Any) {
         
-//        //clear button
-//        btn1.setTitle("", for: <#T##UIControlState#>)
-//        btn2.setTitle("", for: <#T##UIControlState#>)
-//        btn3.setTitle("", for: <#T##UIControlState#>)
-//        btn4.setTitle("", for: <#T##UIControlState#>)
-//        btn5.setTitle("", for: <#T##UIControlState#>)
-//        btn6.setTitle("", for: <#T##UIControlState#>)
-//        btn7.setTitle("", for: <#T##UIControlState#>)
-//        btn8.setTitle("", for: <#T##UIControlState#>)
-//        btn9.setTitle("", for: <#T##UIControlState#>)
-//
+        //clear button
+        btn1.setTitle("", for: .normal)
+        btn2.setTitle("", for: .normal)
+        btn3.setTitle("", for: .normal)
+        btn4.setTitle("", for: .normal)
+        btn5.setTitle("", for: .normal)
+        btn6.setTitle("", for: .normal)
+        btn7.setTitle("", for: .normal)
+        btn8.setTitle("", for: .normal)
+        btn9.setTitle("", for: .normal)
+
         //update turn label
         playerTurn = 1
         turnLabel.text = "It is Player's \(playerTurn) turn!"
