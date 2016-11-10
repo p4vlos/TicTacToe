@@ -22,11 +22,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var btn8: UIButton!
     @IBOutlet weak var btn9: UIButton!
    
-    var gameStart = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     var combinations = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     var playerTurn = 1
-    var btnPressed1 = [0,0,0]
-    var btnPressed2 = [0,0,0]
+    var btnPressed1 = [Int]()
+    var btnPressed2 = [Int]()
+    var counter = 0
+    var winner = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,16 +76,28 @@ class ViewController: UIViewController {
     
     @IBAction func btnPressed(sender: UIButton) {
         //add a for loop
-        if playerTurn == 1 {
+        if playerTurn == 1 && counter > 7 {
             sender.setTitle("X", for: .normal)
             sender.isEnabled = false
-            btnPressed1[0] = sender.tag
+            btnPressed1.append(sender.tag)
             playerPlayed()
-        } else if playerTurn == 2 {
+            counter += 1
+        } else if playerTurn == 2 && counter > 7 {
             sender.setTitle("O", for: .normal)
             sender.isEnabled = false
-            btnPressed2[0] = sender.tag
+            btnPressed2.append(sender.tag)
             playerPlayed()
+            counter += 1
+        } else {
+            //check the results
+            
+            let alertDlg = UIAlertController(title: "The winner", message: "The winner is Player \(winner)", preferredStyle: .alert)
+            let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertDlg.addAction(okBtn)
+            
+            self.present(alertDlg, animated: true, completion: nil)
+            
+            counter = 0
         }
         
     }
