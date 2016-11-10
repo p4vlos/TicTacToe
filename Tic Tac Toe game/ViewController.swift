@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     var btnPressed2 = [Int]()
     var counter = 0
     var winner = 1
+    var i = 0
+    var j = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,35 +73,65 @@ class ViewController: UIViewController {
         btn8.isEnabled = true
         btn9.isEnabled = true
         
+        //i = 0
+        counter = 0
         
     }
     
     @IBAction func btnPressed(sender: UIButton) {
-        //add a for loop
-        if playerTurn == 1 && counter > 7 {
+        
+        
+        
+        if playerTurn == 1 && counter < 9 {
             sender.setTitle("X", for: .normal)
             sender.isEnabled = false
             btnPressed1.append(sender.tag)
             playerPlayed()
             counter += 1
-        } else if playerTurn == 2 && counter > 7 {
+        } else if playerTurn == 2 && counter < 9 {
             sender.setTitle("O", for: .normal)
             sender.isEnabled = false
             btnPressed2.append(sender.tag)
             playerPlayed()
             counter += 1
-        } else {
-            //check the results
-            
-            let alertDlg = UIAlertController(title: "The winner", message: "The winner is Player \(winner)", preferredStyle: .alert)
-            let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertDlg.addAction(okBtn)
-            
-            self.present(alertDlg, animated: true, completion: nil)
-            
-            counter = 0
         }
         
+        
+        
+        
+    }
+    
+    func winnerCalc() {
+        
+        for i in 0...7 {
+            
+            print("Pavlos: i = \(i)")
+            print("Pavlos: counter = \(counter)")
+            if btnPressed1 == combinations[i] && counter <= 5 {
+            //if combinations[i].contains(btnPressed1[j]) && counter <= 5 {
+                winner = 1
+                let alertDlg = UIAlertController(title: "The winner", message: "The winner is Player \(winner)", preferredStyle: .alert)
+                let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertDlg.addAction(okBtn)
+                
+                self.present(alertDlg, animated: true, completion: nil)
+             } else if btnPressed2 == combinations[i] && counter <= 5 {
+            //} else if combinations[i].contains(btnPressed2[j]) && counter <= 5 {
+                winner = 2
+                let alertDlg = UIAlertController(title: "The winner", message: "The winner is Player \(winner)", preferredStyle: .alert)
+                let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertDlg.addAction(okBtn)
+                
+                self.present(alertDlg, animated: true, completion: nil)
+            } else if counter > 9{
+                let alertDlg = UIAlertController(title: "No winner", message: "Tie", preferredStyle: .alert)
+                let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertDlg.addAction(okBtn)
+                
+                self.present(alertDlg, animated: true, completion: nil)
+            }
+        
+        }
     }
     
     func playerPlayed() {
@@ -110,8 +142,9 @@ class ViewController: UIViewController {
             playerTurn = 1
             turnLabel.text = "It is Player's \(playerTurn) turn!"
         }
+        winnerCalc()
     }
-    
-
 }
+
+
 
