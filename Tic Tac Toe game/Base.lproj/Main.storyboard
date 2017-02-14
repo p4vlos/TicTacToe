@@ -217,6 +217,7 @@
                             <constraint firstItem="Mp8-QK-Eof" firstAttribute="baseline" secondItem="fdc-jq-mn4" secondAttribute="baseline" id="qR9-X0-VEV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fdc-jq-mn4" secondAttribute="bottom" constant="149" id="sOE-40-OA9"/>
                             <constraint firstItem="EJa-iD-Hh4" firstAttribute="leading" secondItem="dqj-4P-wzA" secondAttribute="trailing" constant="23" id="tIX-4r-ZOo"/>
+                            <constraint firstItem="NvQ-MB-fB5" firstAttribute="height" secondItem="dqj-4P-wzA" secondAttribute="height" id="tj8-KQ-54R"/>
                             <constraint firstItem="EJa-iD-Hh4" firstAttribute="baseline" secondItem="dqj-4P-wzA" secondAttribute="baseline" id="z5O-vK-hta"/>
                         </constraints>
                     </view>
